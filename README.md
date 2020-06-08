@@ -1,3 +1,24 @@
+# Sony-Android-TV-VPN-Crash-Fixer
+This app fixes a bug regarding the vpn on Sony android tv devices.
+
+
+This app disconnects any vpn on device when screen turns off, to prevent the bug on some devices when Screen is turned off and VPN is On, when device turns on, device restarts itself.
+It turns on vpn again when screen is on.
+
+Also pressing Green Button on remote control Turns vpn ON and 
+pressing Red Button on remote control Turns vpn OFF  
+
+This bug exists on some Sony Android Tv devices.
+I've tested on KD-49x8000G and it works on Android 8
+
+https://community.sony.co.uk/t5/android-tv/49x8000-restarts-when-wifi-connect-disconnect/td-p/2743161
+
+
+
+
+
+
+
 ## [Shadowsocks](https://shadowsocks.org) for Android
 
 [![CircleCI](https://circleci.com/gh/shadowsocks/shadowsocks-android.svg?style=shield)](https://circleci.com/gh/shadowsocks/shadowsocks-android)
