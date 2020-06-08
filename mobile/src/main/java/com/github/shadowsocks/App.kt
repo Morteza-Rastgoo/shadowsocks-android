@@ -21,18 +21,33 @@
 package com.github.shadowsocks
 
 import android.app.Application
+import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
+import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
+import com.github.shadowsocks.service.BackgroundService
 
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
         Core.init(this, MainActivity::class)
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+        val serviceIntent =
+                Intent(applicationContext, BackgroundService::class.java)
+        startServiceCompat(serviceIntent)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         Core.updateNotificationChannels()
+    }
+}
+
+fun Context.startServiceCompat(intent: Intent) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        startForegroundService(intent)
+    } else {
+        startService(intent)
     }
 }

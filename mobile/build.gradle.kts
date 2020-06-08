@@ -9,7 +9,7 @@ plugins {
 
 setupApp()
 
-android.defaultConfig.applicationId = "com.github.shadowsocks"
+android.defaultConfig.applicationId = "com.github.shadowsocks.more"
 
 dependencies {
     implementation("androidx.browser:browser:1.2.0")

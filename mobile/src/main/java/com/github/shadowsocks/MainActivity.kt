@@ -269,4 +269,14 @@ class MainActivity : AppCompatActivity(), ShadowsocksConnection.Callback, OnPref
         BackupManager(this).dataChanged()
         handler.removeCallbacksAndMessages(null)
     }
+
+    private fun checkVPN() {
+        val intent = VpnService.prepare(applicationContext)
+        if (intent != null) {
+            startActivityForResult(intent, 100)
+        } else {
+            onActivityResult(100, RESULT_OK, null)
+        }
+    }
+
 }
