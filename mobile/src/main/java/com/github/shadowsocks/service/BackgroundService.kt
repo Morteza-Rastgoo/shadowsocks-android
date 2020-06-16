@@ -62,7 +62,7 @@ class BackgroundService : Service() {
                 } else if (intent.action == Intent.ACTION_SCREEN_ON) {
                     Log.d("broadcast", "ACTION_SCREEN_ON")
                     //DO HERE
-                    Core.startService()
+//                    Core.startService()
 
                 }
             }
